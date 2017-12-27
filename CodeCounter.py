@@ -18,7 +18,7 @@ def CountLine(path):
         fileformat = path.split(".").pop()
         if fileformat in Language:
             code = open(path, 'rb')
-            file_line = file.readlines()
+            file_line = code.readlines()
             """
             for lines in file_line:
                 line = lines.replace(b' ',b'').replace(b'\n',b'')
