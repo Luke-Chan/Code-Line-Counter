@@ -1,7 +1,7 @@
 import os
 
 Path = r"D:\Data"
-Format = ['py','java','cpp','c','h','php','v','js','css']
+Language = ['py','java','cpp','c','h','php','v','js','css']
 
 def CrawlPath(path):
     path_list = []
@@ -16,7 +16,7 @@ def CountLine(path):
     count = 0
     try:
         fileformat = path.split(".").pop()
-        if fileformat in Format:
+        if fileformat in Language:
             file = open(path, 'rb')
             file_line = file.readlines()
             """
