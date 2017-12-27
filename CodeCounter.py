@@ -6,8 +6,8 @@ Language = ['py','java','cpp','c','h','php','v','js','css']
 def CrawlPath(path):
     path_list = []
     for root, sub, files in os.walk(path):
-        for file in files:
-            filepath = root + "\\" + file
+        for code in files:
+            filepath = root + "\\" + code
             path_list.append(filepath)
     return path_list
 
@@ -17,7 +17,7 @@ def CountLine(path):
     try:
         fileformat = path.split(".").pop()
         if fileformat in Language:
-            file = open(path, 'rb')
+            code = open(path, 'rb')
             file_line = file.readlines()
             """
             for lines in file_line:
@@ -26,7 +26,7 @@ def CountLine(path):
                     count += 1
             """
             count = len(file_line)
-            file.close()
+            code.close()
             print('"' + path + '" --- ' + str(count) + " lines")
             return count
         else:
@@ -41,8 +41,8 @@ if __name__ == '__main__':
     files = CrawlPath(Path)
     count = 0
     
-    for file in files:
-        count += CountLine(file)
+    for code in files:
+        count += CountLine(code)
 
-    print('\nAll the Code in "' + Path + '" have ' + str(count) + ' Lines\n')
+    print('\nAll the Code in "' + Path + '" have ' + str(count) + ' Lines Total\n')
 
