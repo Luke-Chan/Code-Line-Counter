@@ -44,5 +44,4 @@ if __name__ == '__main__':
     for code in files:
         count += CountLine(code)
 
-    print('\nAll the Code in "' + Path + '" have ' + str(count) + ' Lines Total\n')
-
+    print('\nCode in "' + Path + '" --- ' + str(count) + ' Lines\n')
