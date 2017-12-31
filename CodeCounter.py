@@ -19,13 +19,15 @@ def CountLine(path):
         if fileformat in Language:
             code = open(path, 'rb')
             file_line = code.readlines()
-            """
+            # """
             for lines in file_line:
                 line = lines.replace(b' ',b'').replace(b'\n',b'')
+                line = line.replace(b'\r',b'').replace(b'\t',b'')
                 if (line != b''):
                     count += 1
-            """
-            count = len(file_line)
+            # """
+            #count = len(file_line)   #if count the empty line
+            
             code.close()
             print('"' + path + '" --- ' + str(count) + " lines")
             return count
