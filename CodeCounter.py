@@ -27,7 +27,7 @@ def CountLine(path):
                     count += 1
             # """
             
-            #if count space lines:
+            #if count blank lines:
             #count = len(file_line) 
             
             code.close()
